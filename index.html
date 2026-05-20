@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calorie & Health Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Global navigation">
+      <div class="nav-shell">
+        <a class="brand-mark" href="#" aria-label="NutriVerse home">
+          <span class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3c4 4 6 7 6 11a6 6 0 0 1-12 0c0-4 2-7 6-11Z" />
+              <path d="M9 14c1.5 1.2 4.5 1.2 6 0" />
+            </svg>
+          </span>
+          <span>NutriVerse</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="globalNavLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="globalNavLinks">
+          <a href="#">Dashboard</a>
+          <a href="#">Meal Planner</a>
+          <a href="#">Analytics</a>
+          <a href="#">Community</a>
+          <a href="#">Support</a>
+        </div>
+
+        <div class="nav-actions">
+          <a class="upgrade-button" href="#">Upgrade to Pro</a>
+          <button class="settings-button" type="button" aria-label="Settings">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" />
+              <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.37a1.7 1.7 0 0 0-1 .58V20a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1-.58 1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.63 15a1.7 1.7 0 0 0-.58-1H4a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 .58-1 1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.63a1.7 1.7 0 0 0 1-.58V4a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 .58 1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.37 9c.22.35.42.7.58 1H20a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-.51 1Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="dashboard-shell">
+      <header class="topbar">
+        <section class="welcome-card" aria-label="User greeting">
+          <div class="welcome-copy">
+            <p class="kicker" id="greetingTime">Good Morning</p>
+            <h1 id="greetingTitle">Good Morning, Alvis! Let's build your perfect day</h1>
+            <span id="selectedDateText">Today</span>
+          </div>
+
+          <div class="header-actions" aria-label="Quick actions">
+            <button type="button" class="icon-button" aria-label="Search foods">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="m21 21-4.35-4.35" />
+                <circle cx="11" cy="11" r="7" />
+              </svg>
+            </button>
+            <button type="button" class="icon-button has-dot" aria-label="Notifications">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg>
+            </button>
+            <div class="profile-pill">
+              <span class="avatar" aria-hidden="true">A</span>
+              <div>
+                <strong>Alvis</strong>
+                <span>Active tracker</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="hero-panel" aria-label="Application title">
+          <div>
+            <p class="kicker">Nutrition dashboard</p>
+            <h2>Calorie & Health Tracker</h2>
+            <p>Log meals, read your nutrition rhythm, and keep your daily balance clear in one dashboard.</p>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="pulse-ring"></div>
+            <svg viewBox="0 0 180 180">
+              <circle cx="90" cy="90" r="72" />
+              <path d="M62 93c16 22 43 25 63 3" />
+              <path d="M54 82c20-18 50-24 78-5" />
+              <path d="M76 58c4 11 4 22-1 33" />
+              <path d="M112 56c-8 11-10 23-6 36" />
+            </svg>
+          </div>
+        </section>
+      </header>
+
+      <section class="dashboard-grid">
+        <section class="main-column" aria-label="Summary and meal tracking">
+          <section class="metric-row" aria-label="Daily summary cards">
+            <article class="metric-card">
+              <div class="metric-icon lime">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M8 2v20" />
+                  <path d="M5 2v5a3 3 0 0 0 6 0V2" />
+                  <path d="M17 2v20" />
+                  <path d="M17 2c2 2 3 4.5 3 8 0 3-1 5-3 6" />
+                </svg>
+              </div>
+              <div>
+                <span>Total Items</span>
+                <strong id="quickItems">0</strong>
+              </div>
+            </article>
+
+            <article class="metric-card featured">
+              <div class="metric-icon green">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M12 2s5 5.2 5 10a5 5 0 0 1-10 0c0-4.8 5-10 5-10Z" />
+                  <path d="M8.5 14.5c1.8 1.4 5.2 1.4 7 0" />
+                </svg>
+              </div>
+              <div>
+                <span>Total Calories</span>
+                <strong id="quickCalories"><span>0</span><small>kcal</small></strong>
+              </div>
+            </article>
+
+            <article class="metric-card">
+              <div class="metric-icon mint">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M6 7v10" />
+                  <path d="M18 7v10" />
+                  <path d="M3 9v6" />
+                  <path d="M21 9v6" />
+                  <path d="M6 12h12" />
+                </svg>
+              </div>
+              <div>
+                <span>Total Protein</span>
+                <strong id="quickProtein">0 g</strong>
+              </div>
+            </article>
+          </section>
+
+          <section class="tracking-area" aria-label="Meal tracking area">
+            <article class="meal-card" data-meal="breakfast">
+              <div class="meal-header">
+                <div class="meal-title">
+                  <span class="meal-icon">
+                    <svg aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M12 3v3" />
+                      <path d="M5 7.5 7.1 9.6" />
+                      <path d="m19 7.5-2.1 2.1" />
+                      <path d="M4 16a8 8 0 0 1 16 0" />
+                      <path d="M3 20h18" />
+                    </svg>
+                  </span>
+                  <div>
+                    <span>Morning</span>
+                    <h3>Breakfast</h3>
+                  </div>
+                </div>
+                <span class="meal-count" id="breakfastCount">0 items</span>
+              </div>
+
+              <div class="meal-input">
+                <select id="breakfastSelect" aria-label="Select breakfast food"></select>
+                <button type="button" class="add-button" data-meal="breakfast" aria-label="Add breakfast food">
+                  <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M12 5v14" />
+                    <path d="M5 12h14" />
+                  </svg>
+                </button>
+              </div>
+
+              <ul class="food-list" id="breakfastList" aria-live="polite"></ul>
+            </article>
+
+            <article class="meal-card" data-meal="lunch">
+              <div class="meal-header">
+                <div class="meal-title">
+                  <span class="meal-icon">
+                    <svg aria-hidden="true" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="4" />
+                      <path d="M12 2v2" />
+                      <path d="M12 20v2" />
+                      <path d="m4.93 4.93 1.41 1.41" />
+                      <path d="m17.66 17.66 1.41 1.41" />
+                      <path d="M2 12h2" />
+                      <path d="M20 12h2" />
+                      <path d="m6.34 17.66-1.41 1.41" />
+                      <path d="m19.07 4.93-1.41 1.41" />
+                    </svg>
+                  </span>
+                  <div>
+                    <span>Afternoon</span>
+                    <h3>Lunch</h3>
+                  </div>
+                </div>
+                <span class="meal-count" id="lunchCount">0 items</span>
+              </div>
+
+              <div class="meal-input">
+                <select id="lunchSelect" aria-label="Select lunch food"></select>
+                <button type="button" class="add-button" data-meal="lunch" aria-label="Add lunch food">
+                  <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M12 5v14" />
+                    <path d="M5 12h14" />
+                  </svg>
+                </button>
+              </div>
+
+              <ul class="food-list" id="lunchList" aria-live="polite"></ul>
+            </article>
+
+            <article class="meal-card" data-meal="dinner">
+              <div class="meal-header">
+                <div class="meal-title">
+                  <span class="meal-icon">
+                    <svg aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M12 3a6 6 0 0 0 9 7.3A8 8 0 1 1 12 3Z" />
+                    </svg>
+                  </span>
+                  <div>
+                    <span>Evening</span>
+                    <h3>Dinner</h3>
+                  </div>
+                </div>
+                <span class="meal-count" id="dinnerCount">0 items</span>
+              </div>
+
+              <div class="meal-input">
+                <select id="dinnerSelect" aria-label="Select dinner food"></select>
+                <button type="button" class="add-button" data-meal="dinner" aria-label="Add dinner food">
+                  <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M12 5v14" />
+                    <path d="M5 12h14" />
+                  </svg>
+                </button>
+              </div>
+
+              <ul class="food-list" id="dinnerList" aria-live="polite"></ul>
+            </article>
+          </section>
+
+          <section class="macro-card" aria-label="Macronutrient and hydration progress">
+            <div class="macro-heading">
+              <div>
+                <span class="kicker">Daily balance</span>
+                <h3>Macronutrient & Hydration Progress</h3>
+              </div>
+              <span class="macro-badge">Daily target</span>
+            </div>
+
+            <div class="macro-grid">
+              <div class="macro-progress-list">
+                <div class="progress-row">
+                  <div>
+                    <span>Carbs</span>
+                    <strong id="carbProgressText">0 / 250g</strong>
+                  </div>
+                  <div class="progress-track">
+                    <span id="carbProgressBar"></span>
+                  </div>
+                </div>
+                <div class="progress-row">
+                  <div>
+                    <span>Fat</span>
+                    <strong id="fatProgressText">0 / 70g</strong>
+                  </div>
+                  <div class="progress-track">
+                    <span id="fatProgressBar"></span>
+                  </div>
+                </div>
+                <div class="progress-row">
+                  <div>
+                    <span>Protein</span>
+                    <strong id="macroProteinText">0 / 120g</strong>
+                  </div>
+                  <div class="progress-track">
+                    <span id="macroProteinBar"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hydration-card">
+                <div class="hydration-icon">
+                  <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M7 3h10l-1.4 17H8.4L7 3Z" />
+                    <path d="M8 8h8" />
+                    <path d="M8.5 13.5c2 1 5 1 7 0" />
+                  </svg>
+                </div>
+                <div>
+                  <span>Water intake</span>
+                  <strong id="waterProgressText">0 / 8 glasses</strong>
+                </div>
+                <div class="water-glasses" id="waterGlassList" aria-hidden="true"></div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <aside class="side-panel" aria-label="Calendar and information">
+          <section class="calendar-card">
+            <div class="calendar-head">
+              <div>
+                <span class="kicker">Calendar</span>
+                <h3 id="calendarMonthLabel">May 2026</h3>
+              </div>
+              <div class="calendar-nav">
+                <button type="button" id="prevMonth" aria-label="Previous month">
+                  <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="m15 18-6-6 6-6" />
+                  </svg>
+                </button>
+                <button type="button" id="nextMonth" aria-label="Next month">
+                  <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="weekday-grid" aria-hidden="true">
+              <span>Sun</span>
+              <span>Mon</span>
+              <span>Tue</span>
+              <span>Wed</span>
+              <span>Thu</span>
+              <span>Fri</span>
+              <span>Sat</span>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+          </section>
+
+          <section class="tip-card">
+            <div class="tip-image">
+              <img id="tipImage" alt="Healthy food pick" />
+            </div>
+            <div>
+              <span class="kicker">Healthy Food Tip</span>
+              <h3 id="tipTitle">Protein first</h3>
+              <p id="tipText">Start with lean protein to stay full longer.</p>
+            </div>
+          </section>
+
+          <section class="protein-card">
+            <div class="section-heading">
+              <span class="kicker">Top picks</span>
+              <h3>High-Protein Foods</h3>
+            </div>
+            <ul id="topProteinList"></ul>
+          </section>
+        </aside>
+
+        <section class="finish-section">
+          <button type="button" class="finish-button" id="finishDay">
+            <span>Finish Day</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" />
+            </svg>
+          </button>
+
+          <section class="daily-summary hidden" id="dailySummary" aria-live="polite">
+            <div class="summary-layout">
+              <div class="donut-wrap">
+                <div class="donut-chart" id="donutChart">
+                  <div>
+                    <strong id="donutHealthyLabel">0%</strong>
+                    <span>HEALTHY</span>
+                  </div>
+                </div>
+                <div class="legend-row">
+                  <span><i class="legend-dot healthy"></i> Healthy</span>
+                  <span><i class="legend-dot fast"></i> Fast-food</span>
+                </div>
+              </div>
+
+              <div class="summary-content">
+                <div class="summary-heading">
+                  <div>
+                    <span class="kicker">Daily Summary</span>
+                    <h2>Nutrition Summary</h2>
+                  </div>
+                  <span class="summary-date" id="summaryDate"></span>
+                </div>
+
+                <div class="summary-metrics">
+                  <div>
+                    <span>Total Calories</span>
+                    <strong id="totalCalories">0 kcal</strong>
+                  </div>
+                  <div>
+                    <span>Total Protein</span>
+                    <strong id="totalProtein">0 g</strong>
+                  </div>
+                  <div>
+                    <span>Fast-food</span>
+                    <strong id="fastFoodPercent">0%</strong>
+                  </div>
+                </div>
+
+                <div class="health-message" id="healthMessage">
+                  <span class="message-icon" id="healthIcon">i</span>
+                  <p>No summary yet.</p>
+                </div>
+                <div class="personal-tip" id="personalizedTip"></div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-shell">
+        <section class="footer-brand">
+          <a class="brand-mark footer-logo" href="#" aria-label="NutriVerse home">
+            <span class="brand-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3c4 4 6 7 6 11a6 6 0 0 1-12 0c0-4 2-7 6-11Z" />
+                <path d="M9 14c1.5 1.2 4.5 1.2 6 0" />
+              </svg>
+            </span>
+            <span>NutriVerse</span>
+          </a>
+          <p>Smart nutrition tracking for cleaner routines, better meals, and healthier daily momentum.</p>
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" aria-label="Twitter">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M4 4l12.5 16H20L7.5 4H4Z" />
+                <path d="M4 20 20 4" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <rect x="4" y="4" width="16" height="16" rx="5" />
+                <circle cx="12" cy="12" r="3.4" />
+                <path d="M17.5 6.8h.01" />
+              </svg>
+            </a>
+            <a href="#" aria-label="GitHub">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.5 9.5 0 0 1 12 6.99c.85 0 1.7.11 2.5.34 1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.67-4.56 4.92.36.31.68.92.68 1.86v2.76c0 .26.18.58.69.48A10 10 0 0 0 12 2Z" />
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <section class="footer-column">
+          <h3>Product</h3>
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Integrations</a>
+        </section>
+
+        <section class="footer-column">
+          <h3>Company</h3>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Privacy Policy</a>
+        </section>
+      </div>
+
+      <div class="copyright-bar">
+        <span>&copy; 2026 NutriVerse Co. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
